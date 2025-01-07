@@ -64,3 +64,33 @@ Code: 200 OK
         "_id": "507f1f77bcf86cd799439012"
     }
 }
+
+### Login User
+POST /users/login
+
+Authenticate existing user and get token.
+
+Request Body Schema{
+  "email": "string",     // required, valid email
+  "password": "string"   // required, min 6 chars
+}
+Success Response
+Code: 200 OK
+{
+  "token": "eyJhbGciOiJIUzI1NiIs...",
+  "user": {
+    "fullname": {
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    "email": "john@example.com",
+    "_id": "507f1f77bcf86cd799439011"
+  }
+}
+
+Error Responses
+Code: 401 UNAUTHORIZED
+
+{
+  "message": "Invalid email or password"
+}
