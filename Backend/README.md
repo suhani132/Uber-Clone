@@ -94,3 +94,37 @@ Code: 401 UNAUTHORIZED
 {
   "message": "Invalid email or password"
 }
+
+ Get User Profile
+GET /users/profile
+
+Retrieve the profile of the authenticated user.
+
+Success Response
+Code: 200 OK
+{
+  "user": {
+    "fullname": {
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    "email": "john@example.com",
+    "_id": "507f1f77bcf86cd799439011"
+  }
+}
+Error Responses
+Code: 401 UNAUTHORIZED
+
+. Logout User
+GET /users/logout
+
+Success Response
+Code: 200 OK
+{
+  "message": "Logged out successfully"
+}
+Error Responses
+Code: 401 UNAUTHORIZED
+{
+  "message": "Unauthorized"
+}
