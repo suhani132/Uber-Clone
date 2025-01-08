@@ -128,3 +128,42 @@ Code: 401 UNAUTHORIZED
 {
   "message": "Unauthorized"
 }
+
+## POST 
+/captains/register
+{
+  "fullname": {
+    "firstname": "string",    // required, min 3 chars
+    "lastname": "string"      // optional, min 3 chars if provided
+  },
+  "email": "string",         // required, valid email
+  "password": "string",      // required, min 6 chars
+  "vehicle": {
+    "color": "string",       // required, min 3 chars
+    "plate": "string",       // required, min 3 chars
+    "capacity": "number",    // required, min 1
+    "vehicleType": "string"  // required, one of ['car', 'motorcycle', 'auto']
+  }
+}
+
+
+Success Response
+Code: 201 CREATED
+
+{
+  "token": "eyJhbGciOiJIUzI1NiIs...",
+  "captain": {
+    "fullname": {
+      "firstname": "John",
+      "lastname": "Doe"
+    },
+    "email": "john@example.com",
+    "vehicle": {
+      "color": "red",
+      "plate": "ABC123",
+      "capacity": 4,
+      "vehicleType": "car"
+    },
+    "_id": "507f1f77bcf86cd799439011"
+  }
+}
