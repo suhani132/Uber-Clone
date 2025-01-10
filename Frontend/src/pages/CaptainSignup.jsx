@@ -165,7 +165,7 @@ const CaptainSignup = () => {
         </p>
       </div>
       <div>
-        <p className="text-[10px] lining-tight text-center">
+        <p className="text-[10px] mt-6 lining-tight text-center">
           This site is protected by reCAPTCHA and the <span className='underline'>Google Privacy Policy</span> and <span className='underline'>Terms of Service apply</span>.
         </p>
       </div>
